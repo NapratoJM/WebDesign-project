@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="images/logo.png">
+</head>
+<body>
+    <div class="container">
+        <div class="top-icon">
+    <img src="images/loho-test.png" alt="Logo">
+</div>
+        <h1>Welcome</h1>
+        <p class="subtitle">Sign in to your peaceful space</p>
+
+       <form action="homepage.html">
+    <input type="email" placeholder="Email address" required>
+
+    <div class="password-box">
+        <input type="password" id="password" placeholder="Password" required>
+        <i class="fa-solid fa-eye" id="togglePassword"></i>
+    </div>
+
+    <div class="options">
+        <label><input type="checkbox"> Remember me</label>
+        <a href="#">Forgot password?</a>
+    </div>
+
+    <button type="submit">Sign in</button>
+</form>
+
+        <p class="or">or continue with</p>
+
+        <div class="social">
+            <button class="google"><i class="fa-brands fa-google social-icon"></i> Google</button>
+            <button class="facebook"><i class="fa-brands fa-facebook social-icon"></i> Facebook</button>
+        </div>
+
+        <p class="signup">
+            Don't have an account? <a href="#">Sign up</a>
+        </p>
+    </div>
+
+    <script>
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#password');
+
+        togglePassword.addEventListener('click', () => {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            togglePassword.classList.toggle('fa-eye-slash');
+        });
+    </script>
+</body>
+</html>
