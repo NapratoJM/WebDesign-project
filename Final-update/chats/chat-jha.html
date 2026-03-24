@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhariza Mendoza – Chat · Witty</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/loho-test.png">
+    <link rel="stylesheet" href="messages.css">
+    <script>
+    // Only redirect to lists if NOT coming from lists-page (so tapping a convo still works)
+    if (window.innerWidth <= 768 && document.referrer.indexOf('lists-page.html') === -1 && document.referrer !== '') {
+        window.location.replace('lists-page.html');
+    }
+    </script>
+</head>
+<body>
+
+<header class="topbar">
+    <div class="topbar-left">
+        <img src="../images/profile.jpg" class="top-avatar">
+    </div>
+    <div class="topbar-title">
+        <img src="../images/loho-test.png" class="title-logo">
+        <span>𝚆𝚒𝚝𝚝𝚢</span>
+    </div>
+    <div class="topbar-right">
+        <button class="icon-btn" id="menuBtn"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+        <div class="dropdown-menu" id="menuDropdown">
+            <a href="#">Help &amp; Support</a>
+            <a href="#">Settings</a>
+            <a href="../login.html">Logout</a>
+        </div>
+    </div>
+</header>
+
+<aside class="sidebar">
+    <div class="panel-header"><h2>Messages</h2><button class="panel-icon-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button></div>
+    <div class="panel-search">Search messages...</div>
+    <div class="tabs">
+        <a class="tab-btn active" href="#">Inbox</a>
+        <a class="tab-btn" href="#">Requests</a>
+    </div>
+    <div class="contact-list">
+        <a href="chat-nina.html" class="contact-item"><div class="avatar-wrap"><img src="https://i.pinimg.com/1200x/37/8e/60/378e60434a740b05817a18e428b73c8a.jpg"><div class="online-dot"></div></div><div class="contact-info"><strong>Nina Becina</strong><span class="preview" data-full="You: deal!!">You: deal!!</span></div><div class="contact-meta"><span>now</span></div></a>
+        <a href="chat-jhorelle.html" class="contact-item"><div class="avatar-wrap"><img src="https://i.pinimg.com/736x/a4/58/e9/a458e9a93a3a6a4e1f8101805eb2ccb5.jpg"></div><div class="contact-info"><strong>Jhorelle Naprato</strong><span class="preview unread" data-full="You: next time promise">You: next time promise</span></div><div class="contact-meta"><span>2m</span><span class="unread-badge">2</span></div></a>
+        <a href="chat-arci.html" class="contact-item"><div class="avatar-wrap"><img src="https://i.pinimg.com/736x/a2/ce/1a/a2ce1a1d032ae71536faf5e411be82b3.jpg"></div><div class="contact-info"><strong>Arcenio Layao</strong><span class="preview" data-full="You: Sanaol talaga eh">You: Sanaol talaga eh</span></div><div class="contact-meta"><span>30m</span></div></a>
+        <a href="chat-carl.html" class="contact-item"><div class="avatar-wrap"><img src="https://i.pinimg.com/736x/e5/45/b7/e545b7de581d8e2707ad86e97433aa11.jpg"><div class="online-dot"></div></div><div class="contact-info"><strong>Carl Apolinario</strong><span class="preview unread" data-full="You: ok sige sandali lang">You: ok sige sandali lang</span></div><div class="contact-meta"><span>2hrs</span><span class="unread-badge">2</span></div></a>
+        <a href="chat-jex.html" class="contact-item"><div class="avatar-wrap"><img src="https://i.pinimg.com/736x/62/f0/10/62f010dc8252da0dc949fb30179b5089.jpg"></div><div class="contact-info"><strong>Jexter Corpuz</strong><span class="preview" data-full="You: sige hintay ko bayad niyo">You: sige hintay ko bayad niyo</span></div><div class="contact-meta"><span>3hrs</span></div></a>
+        <a href="chat-dani.html" class="contact-item"><div class="avatar-wrap"><img src="https://i.pinimg.com/1200x/3d/89/3f/3d893fba683b35d4558700035366728b.jpg"></div><div class="contact-info"><strong>Daniella Encarnacion</strong><span class="preview" data-full="Daniella: sige ok">Daniella: sige ok</span></div><div class="contact-meta"><span>4hrs</span></div></a>
+        <a href="chat-ysa.html" class="contact-item"><div class="avatar-wrap"><img src="https://i.pinimg.com/1200x/12/66/fe/1266fe1c738d770602693a234baa6db7.jpg"></div><div class="contact-info"><strong>Ysabella Santos</strong><span class="preview" data-full="You: okii te">You: okii te</span></div><div class="contact-meta"><span>5hrs</span></div></a>
+        <a href="chat-arish.html" class="contact-item"><div class="avatar-wrap"><img src="https://i.pinimg.com/1200x/b0/64/63/b064631fafd3c9b45853b5ca2a8ea5bb.jpg"><div class="online-dot"></div></div><div class="contact-info"><strong>Arish Salisod</strong><span class="preview" data-full="You: Legit napatawa ako sa sala">You: Legit napatawa ako sa sala</span></div><div class="contact-meta"><span>6hrs</span></div></a>
+        <a href="chat-richard.html" class="contact-item"><div class="avatar-wrap"><img src="https://i.pinimg.com/1200x/40/b9/1c/40b91c964653d5a057abfeef5efc2a95.jpg"><div class="online-dot"></div></div><div class="contact-info"><strong>Richard Villaroza</strong><span class="preview unread" data-full="Richard: ok">Richard: ok</span></div><div class="contact-meta"><span>8hrs</span><span class="unread-badge">2</span></div></a>
+        <a href="chat-asia.html" class="contact-item"><div class="avatar-wrap"><img src="https://i.pinimg.com/736x/e5/0f/9d/e50f9d6845fbd4da2485f062b684e256.jpg"><div class="online-dot"></div></div><div class="contact-info"><strong>Asia Delfino</strong><span class="preview" data-full="Asia: hahaha oo nga">Asia: hahaha oo nga</span></div><div class="contact-meta"><span>9hrs</span></div></a>
+        <a href="chat-roushan.html" class="contact-item"><div class="avatar-wrap"><img src="https://i.pinimg.com/1200x/70/74/bd/7074bdb861d1679a6c037b2c943f7524.jpg"></div><div class="contact-info"><strong>ROSHANN!!</strong><span class="preview unread" data-full="ROSHANN!!: salamat!">ROSHANN!!: salamat!</span></div><div class="contact-meta"><span>10hrs</span><span class="unread-badge">2</span></div></a>
+        <a href="chat-jha.html" class="contact-item active"><div class="avatar-wrap"><img src="https://i.pinimg.com/1200x/68/4d/24/684d244c961128b4a20c0aa62dde5d2c.jpg"></div><div class="contact-info"><strong>Jhariza Mendoza</strong><span class="preview" data-full="You: sige enjoy!">You: sige enjoy!</span></div><div class="contact-meta"><span>12hrs</span></div></a>
+        <a href="chat-mama.html" class="contact-item"><div class="avatar-wrap"><img src="https://i.pinimg.com/736x/7a/1c/4d/7a1c4d503b95b64cbe54c8280e2eab02.jpg"></div><div class="contact-info"><strong>MY MOTHERRR 🥰</strong><span class="preview" data-full="You: ingat ka lagi ma">You: ingat ka lagi ma</span></div><div class="contact-meta"><span>15hrs</span></div></a>
+
+    </div>
+</aside>
+
+<main class="feed">
+    <div class="feed-tabs">
+        <a href="../Homepage.html" class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg></a>
+        <a href="chat-jha.html" class="tab active"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+        <a href="#" class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></a>
+        <a href="../friends.html" class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></a>
+        <a href="#" class="tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg></a>
+    </div>
+
+    <div class="chat-container">
+        <div class="chat-window">
+            <div class="chat-header"><a href="#" class="back-btn" onclick="window.location.href='lists-page.html'; return false;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg></a>
+                <div class="avatar-wrap"><img src="https://i.pinimg.com/1200x/68/4d/24/684d244c961128b4a20c0aa62dde5d2c.jpg" alt="Jhariza Mendoza"></div>
+                <div class="info">
+                    <strong>Jhariza Mendoza</strong>
+                    <span class="status-text">Active 12days ago</span>
+                </div>
+                <div class="chat-actions">
+                    <a href="#" title="Call"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
+                    <a href="#" title="Video"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></a>
+                    <a href="#" title="Info" onclick="togglePanel(); return false;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></a>
+                </div>
+            </div>
+            <div class="messages-feed">
+<div class="date-divider">Today</div>
+                <div class="msg-row sent">
+                    <div class="bubble-wrap">
+                        <div class="emoji-popup"><span>😆</span><span>❤️</span><span>😮</span><span>😢</span><span>😠</span><span>👍</span></div>
+                        <div class="bubble">HAHAHAHA sorry sorry luto ka na?</div>
+                        <span class="bubble-time">1:00 PM</span>
+                    </div>
+                </div>
+                <div class="msg-row">
+                    <div class="bubble-avatar"><img src="https://i.pinimg.com/1200x/68/4d/24/684d244c961128b4a20c0aa62dde5d2c.jpg"></div>
+                    <div class="bubble-wrap">
+                        <div class="emoji-popup"><span>😆</span><span>❤️</span><span>😮</span><span>😢</span><span>😠</span><span>👍</span></div>
+                        <div class="bubble">haha oo luto na</div>
+                        <span class="bubble-time">1:05 PM</span>
+                    </div>
+                </div>
+                <div class="msg-row sent">
+                    <div class="bubble-wrap">
+                        <div class="emoji-popup"><span>😆</span><span>❤️</span><span>😮</span><span>😢</span><span>😠</span><span>👍</span></div>
+                        <div class="bubble">sige enjoy!</div>
+                        <span class="bubble-time">1:06 PM</span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="message-input-bar">
+                <div class="input-extras">
+                    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></a>
+                    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></a>
+                    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M10 9H8a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h2v-2"/><line x1="14" y1="9" x2="14" y2="15"/><path d="M18 9h-2.5a1.5 1.5 0 0 0 0 3H18"/></svg></a>
+                    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></a>
+                </div>
+                <input class="msg-input-wrap" type="text" placeholder="Type a message..." />
+                <button class="send-btn">
+                    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<aside class="right">
+    <div class="cip-wrap">
+        <div class="cip-top">
+            <img class="cip-avatar" src="https://i.pinimg.com/1200x/68/4d/24/684d244c961128b4a20c0aa62dde5d2c.jpg" alt="Jhariza Mendoza">
+            <h3 class="cip-name">Jhariza Mendoza</h3>
+            <p class="cip-handle">@jha.men</p>
+            <span class="cip-online-badge">🟢 Active 12days ago</span>
+        </div>
+        <div class="cip-quick-actions">
+            <div class="cip-action-btn"><div class="cip-action-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><span>Audio</span></div>
+            <div class="cip-action-btn"><div class="cip-action-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><span>Video</span></div>
+            <div class="cip-action-btn"><div class="cip-action-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><span>Profile</span></div>
+            <div class="cip-action-btn"><div class="cip-action-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><span>Mute</span></div>
+        </div>
+        <div class="cip-scroll">
+            <div class="cip-section-label">Customisation</div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#8fa14a;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div><span>Theme</span><span class="cip-chevron">›</span></div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#8fa14a;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"/><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"/></svg></div><span>Quick reaction</span><span class="cip-chevron">›</span></div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#5b7a99;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="15" y2="20"/><line x1="12" y1="4" x2="12" y2="20"/></svg></div><span>Nicknames</span><span class="cip-chevron">›</span></div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#9b59b6;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span>Word effects</span><span class="cip-chevron">›</span></div>
+            <div class="cip-section-label">More actions</div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#5b7a99;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><span>Create group chat</span><span class="cip-chevron">›</span></div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#888;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg></div><span>View archived chat</span><span class="cip-chevron">›</span></div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#888;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></div><span>View media, files and links</span><span class="cip-chevron">›</span></div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#888;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div><span>Pinned messages</span><span class="cip-chevron">›</span></div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#888;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><span>Search in conversation</span><span class="cip-chevron">›</span></div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#888;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg></div><span>Notifications &amp; sounds</span><div style="margin-left:auto;display:flex;align-items:center;gap:4px;"><span style="font-size:10px;color:#666;">On</span><span class="cip-chevron">›</span></div></div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#888;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg></div><span>Share contact</span><span class="cip-chevron">›</span></div>
+            <div class="cip-section-label">Privacy &amp; support</div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#5b7a99;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><span>Message permissions</span><span class="cip-chevron">›</span></div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#5b7a99;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div><span>Verify encryption</span><span class="cip-chevron">›</span></div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#888;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><span>Disappearing messages</span><div style="margin-left:auto;display:flex;align-items:center;gap:4px;"><span style="font-size:10px;color:#666;">Off</span><span class="cip-chevron">›</span></div></div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#c0392b;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div><span>Restrict</span><span class="cip-chevron">›</span></div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#c0392b;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg></div><span>Block</span><span class="cip-chevron">›</span></div>
+            <div class="cip-row"><div class="cip-row-icon" style="background:#e67e22;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div><span>Report</span><span class="cip-chevron">›</span></div>
+            <div class="cip-row" style="margin-bottom:8px;"><div class="cip-row-icon" style="background:#c0392b;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/></svg></div><span style="color:#c0392b;font-weight:700;">Delete chat</span><span class="cip-chevron" style="color:#c0392b;">›</span></div>
+        </div>
+    </div>
+</aside>
+
+<div class="bottom-nav">
+    <a href="../Homepage.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a>
+    <a href="../friends.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Friends</a>
+    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Post</a>
+    <a href="chat-jha.html" class="active"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Messages</a>
+    <a href="../profile/profile.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</a>
+</div>
+
+<script src="chat.js"></script>
+    <script>
+    function togglePanel() {
+        var panel = document.querySelector('.right');
+        var container = document.querySelector('.chat-container');
+        if (!panel) return;
+
+        if (panel.classList.contains('panel-open')) {
+            panel.classList.remove('panel-open');
+            panel.style.display = 'none';
+            container.style.display = 'flex';
+        } else {
+            panel.style.cssText = 'display:flex; flex-direction:column; width:75vw; max-width:300px; height:100%; overflow-y:auto; background:#d9c18e; flex-shrink:0; border-left:1px solid #c7b88a; border-radius:20px; margin-left:8px;';
+            container.style.display = 'flex';
+            panel.classList.add('panel-open');
+        }
+    }
+    </script>
+    <script>
+    // Preview truncation: 20 chars on PC, 25 on mobile
+    function truncatePreviews() {
+        var limit = window.innerWidth <= 768 ? 25 : 20;
+        document.querySelectorAll('.preview').forEach(function(el) {
+            var full = el.getAttribute('data-full');
+            if (!full) return;
+            el.textContent = full.length > limit ? full.substring(0, limit) + '...' : full;
+        });
+    }
+    truncatePreviews();
+    window.addEventListener('resize', truncatePreviews);
+
+    // Double-click (PC) + Double-tap (mobile) emoji reactions
+    document.querySelectorAll('.bubble').forEach(function(bubble) {
+        // PC: double click
+        bubble.addEventListener('dblclick', function(e) {
+            e.stopPropagation();
+            document.querySelectorAll('.emoji-popup').forEach(p => p.classList.remove('show'));
+            var popup = bubble.parentElement.querySelector('.emoji-popup');
+            if (popup) popup.classList.add('show');
+        });
+        // Mobile: double tap
+        var lastTap = 0;
+        bubble.addEventListener('touchend', function(e) {
+            var now = Date.now();
+            if (now - lastTap < 300) {
+                e.preventDefault();
+                e.stopPropagation();
+                document.querySelectorAll('.emoji-popup').forEach(p => p.classList.remove('show'));
+                var popup = bubble.parentElement.querySelector('.emoji-popup');
+                if (popup) popup.classList.add('show');
+            }
+            lastTap = now;
+        });
+    });
+    document.querySelectorAll('.emoji-popup span').forEach(function(emojiBtn) {
+        emojiBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            var emoji = emojiBtn.textContent;
+            var wrap = emojiBtn.closest('.bubble-wrap');
+            var existing = wrap.querySelector('.bubble-reaction');
+            if (existing) {
+                existing.textContent === emoji ? existing.remove() : (existing.textContent = emoji);
+            } else {
+                var r = document.createElement('span');
+                r.className = 'bubble-reaction';
+                r.textContent = emoji;
+                wrap.appendChild(r);
+            }
+            wrap.querySelector('.emoji-popup').classList.remove('show');
+        });
+    });
+    document.addEventListener('click', function() {
+        document.querySelectorAll('.emoji-popup').forEach(p => p.classList.remove('show'));
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witty</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="Homepage.css">
+    <link rel="icon" type="image/png" href="images/loho-test.png">
+</head>
+<body>
+<div class="lightbox" id="lightbox">
+    <span class="lightbox-close">&times;</span>
+    <img class="lightbox-img" src="">
+<div class="lightbox-nav">
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+</div>
+</div>
+    <header class="topbar">
+
+<div class="topbar-left">
+    <img src="images/profile.jpg" class="top-avatar">
+
+<div class="profile-panel" id="profilePanel">
+<div class="pp-header">
+    <img src="images/profile.jpg">
+<div>
+    <strong>Rainne Zulueta</strong>
+    <span>@rgn.yk</span>
+</div>
+</div>
+    <a href="/profile/profile.html">View Profile</a>
+</div>
+    <input type="text" placeholder="Search..." class="search-bar">
+</div>
+
+<div class="topbar-title">
+    <img src="images/loho-test.png" class="title-logo">
+</div>
+
+<div class="topbar-right">
+
+    <button class="icon-btn" id="menuBtn">☰</button>
+<div class="dropdown-menu" id="menuDropdown">
+    <a href="#">Help & Support</a>
+    <a href="#">Settings</a>
+    <a href="login.html">Logout</a>
+</div></div>
+
+</header>
+
+<aside class="sidebar">
+<div class="sidebar-widgets">
+<div class="sw-widget" id="weatherBox">
+<div class="sw-header">
+    <span><i class="fa-solid fa-cloud-sun"></i> Weather</span>
+    <button class="sw-toggle">–</button>
+</div>
+<div class="sw-content" id="weatherContent">Loading weather...</div>
+</div>
+<div class="sw-widget trends-widget" id="trendsBox">
+<div class="sw-header">
+    <span><i class="fa-solid fa-fire"></i> Trends & News</span>
+</div>
+
+<div class="sw-content" id="trendsContent">
+<div class="trend-item">
+    <span class="trend-tag">#Vtubing</span>
+    <p>Gundam Teams Up with Hololive for SUPER EXPO Booth</p>
+</div>
+
+<div class="trend-item">
+    <span class="trend-tag">#Anime</span>
+    <p>MAPPA Shares Stunning Denji and Reze Art for AnimeJapan 2026</p>
+</div>
+
+<div class="trend-item">
+    <span class="trend-tag">#Gaming</span>
+    <p>Honkai: Star Rail Unveils Sparxie in Playful 'Ravings' Trailer</p>
+</div>
+<div class="trend-item">
+    <span class="trend-tag">#Gaming</span>
+    <p>Resident Evil Requiem Sells 5 Million Copies in First Week with Leon Kennedy Return</p>
+</div>
+
+<div class="trend-item">
+    <span class="trend-tag">#Kpop</span>
+    <p>Popular SM Entertainment Main Vocalist’s High Notes Hit With Scathing Criticism</p>
+</div>
+</div>
+</div>
+</div>
+</aside>
+
+<main class="feed">
+<div class="feed-tabs-bar">
+    <a href="Homepage.html" class="feed-tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg></a>
+    <a href="chats/chat-nina.html" class="feed-tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></a>
+    <a href="#" class="feed-tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg></a>
+    <a href="friends.html" class="feed-tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></a>
+    <a href="#" class="feed-tab"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg></a>
+</div>
+
+</div>
+
+<div class="stories-wrapper">
+    <button class="story-nav left">&#10094;</button>
+<div class="stories-container" id="stories">
+
+<div class="story">
+<div class="story create-story">
+    <img src="/images/profile.jpg">
+<div class="story-overlay">
+<div class="create-btn">+</div>
+    <span>Create Story</span>
+</div>
+</div>
+
+<div class="story-img">
+    <img src="/images/profile.jpg">
+</div>
+    <img src="/images/profile.jpg" class="profile-img">
+</div>
+
+<div class="story">
+<div class="story-img">
+    <img src="https://i.pinimg.com/1200x/13/32/08/133208e9c9f21391b62caa1514e23643.jpg">
+</div>
+    <img src="https://i.pinimg.com/736x/4d/e1/8f/4de18f8aaa5eab191c44a5d9a8947882.jpg" class="profile-img">
+<div class="name">Nina Becina</div>
+</div>
+
+<div class="story">
+<div class="story-img">
+    <img src="https://i.pinimg.com/1200x/90/e5/b6/90e5b6cc0c01034636fc39112974cd52.jpg">
+</div>
+    <img src="https://i.pinimg.com/736x/a4/58/e9/a458e9a93a3a6a4e1f8101805eb2ccb5.jpg" class="profile-img">
+<div class="name">Jhorelle Naprato</div>
+</div>
+
+<div class="story">
+<div class="story-img">
+    <img src="https://i.pinimg.com/736x/34/7b/2e/347b2ed5909061a9043a7d0560006a99.jpg">
+</div>
+    <img src="https://i.pinimg.com/1200x/12/66/fe/1266fe1c738d770602693a234baa6db7.jpg" class="profile-img">
+<div class="name">Ysabella Santos</div>
+</div>
+
+<div class="story">
+<div class="story-img">
+    <img src="https://i.pinimg.com/736x/e1/be/1e/e1be1ea9645ec5928e636a7b911ffba2.jpg">
+</div>
+    <img src="https://i.pinimg.com/736x/b4/b9/e6/b4b9e64406bc8c70a716a4ea9c2343b0.jpg" class="profile-img">
+<div class="name">Maria Antonette</div>
+</div>
+
+<div class="story">
+<div class="story-img">
+    <img src="https://i.pinimg.com/736x/88/ba/bb/88babb0344eb55c0b58953e93d78a818.jpg">
+</div>
+    <img src="https://i.pinimg.com/736x/62/f0/10/62f010dc8252da0dc949fb30179b5089.jpg" class="profile-img">
+<div class="name">Jexter Corpuz</div>
+</div>
+
+<div class="story">
+<div class="story-img">
+     <img src="https://i.pinimg.com/736x/20/9e/ba/209ebaaa430473ef0c02725470626d89.jpg">
+</div>
+    <img src="https://i.pinimg.com/1200x/3d/89/3f/3d893fba683b35d4558700035366728b.jpg" class="profile-img">
+<div class="name">Daniella Encarnacion</div>
+</div>
+
+</div>
+    <button class="story-nav right">&#10095;</button>
+</div>
+
+<div class="post-container">
+    <img src="/images/profile.jpg" alt="Profile" class="avatar">
+
+<div class="input-wrapper">
+<div class="text-input-section">
+    <input type="text" placeholder="Share Something......"></div>
+
+<div class="action-bar">
+<div class="tools">
+
+    <span class="tool">
+    <svg viewBox="0 0 24 24">
+    <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1.5V8h4.5"/>
+    </svg>File</span>
+
+    <span class="tool">
+    <svg viewBox="0 0 24 24">
+    <path d="M21 19V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2zM8.5 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zM21 17l-5-5-4 4-2-2-5 5"/>
+    </svg>Image</span>
+
+    <span class="tool">
+    <svg viewBox="0 0 24 24">
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/>
+    </svg>Location</span>
+    <span class="tool dropdown">
+    <svg viewBox="0 0 24 24">
+    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm0 18c-1.66 0-3.18-.5-4.44-1.35.7-.37 1.48-.65 2.31-.82.39-.08.67-.43.67-.83v-1c0-.55-.45-1-1-1H7.5c-.6 0-1.12-.35-1.37-.85A8.02 8.02 0 0 1 4 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/>
+    </svg> Public▾</span>
+</div>
+   <button class="share-btn">Share</button>
+</div>
+</div>
+</div>
+
+<div class="post">
+<div class="post-header">
+<div class="avatar small">
+    <img src="https://i.pinimg.com/736x/4d/e1/8f/4de18f8aaa5eab191c44a5d9a8947882.jpg">
+</div>
+    <div>
+    <strong>Nina Becina</strong>
+    <span>1 min ago</span>
+</div>
+</div>
+    <p class="post-text">Sana nag review guardian angel ko...AWA NA LNG SANAAA</p>
+<div class="post-images">
+    <img src="https://i.pinimg.com/736x/96/4e/a8/964ea8fd663443907e53b5262001180c.jpg">
+</div>
+<div class="tweet-actions">
+    <button class="tweet-action like">
+    <svg viewbox="0 0 24 24"><path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z" />
+    </svg><span>1.2K</span> </button> 
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z" />
+    </svg><span>156</span> </button> 
+    <button class="tweet-action retweet">
+    <svg viewbox="0 0 24 24"><path d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z" />
+    </svg><span>89</span> </button> 
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z" /><path d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z" />
+    </svg></button>
+</div>
+</div>
+<div class="post">
+<div class="post-header">
+<div class="avatar small">
+    <img src="https://i.pinimg.com/1200x/12/66/fe/1266fe1c738d770602693a234baa6db7.jpg">
+</div>
+<div>
+    <strong>Ysabella Santos</strong>
+    <span>1 min ago</span>
+</div>
+</div>
+    <p class="post-text"> Humor paba yan or disorder na? </p>
+<div class="post-images">
+    <img src="https://i.pinimg.com/736x/e4/59/0f/e4590f921b1b17ec07327fc5b523b721.jpg">
+</div>
+
+<div class="tweet-actions">
+    <button class="tweet-action like">
+    <svg viewBox="0 0 24 24"><path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z"/></svg>
+    <span>1.2K</span>
+    </button>
+    <button class="tweet-action">
+    <svg viewBox="0 0 24 24"><path d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z"/></svg>
+    <span>156</span>
+    </button>
+    <button class="tweet-action retweet">
+    <svg viewBox="0 0 24 24"><path d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z"/></svg>
+    <span>89</span>
+    </button>
+    <button class="tweet-action">
+    <svg viewBox="0 0 24 24"><path d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z"/><path d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z"/></svg>
+    </button>
+</div>
+</div>
+<div class="post">
+<div class="post-header">
+<div class="avatar small">
+    <img src="https://i.pinimg.com/736x/a4/58/e9/a458e9a93a3a6a4e1f8101805eb2ccb5.jpg">
+</div>
+<div>
+    <strong>Jhorelle Naprato</strong>
+    <span>16 min ago</span>
+</div>
+</div>
+    <p class="post-text">Kung sino man kumokontra sa love story ko ay kumokontra sa kapayapaan ko ;-;</p>
+
+<div class="tweet-actions">
+    <button class="tweet-action like">
+    <svg viewbox="0 0 24 24"><path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z" />
+    </svg><span>1.2K</span> </button> 
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z" />
+    </svg><span>156</span> </button> 
+    <button class="tweet-action retweet">
+    <svg viewbox="0 0 24 24"><path d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z" />
+    </svg><span>89</span> </button> 
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z" /><path d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z" />
+    </svg></button>
+</div>
+</div>
+<div class="post">
+<div class="post-header">
+<div class="avatar small">
+    <img src="https://i.pinimg.com/736x/e5/45/b7/e545b7de581d8e2707ad86e97433aa11.jpg">
+</div>
+<div>
+    <strong>Carl Apolinario</strong>
+    <span>16 min ago</span>
+</div>
+</div>
+    <p class="post-text">Malayo pa pero malapit kana tamaan sakin</p>
+
+<div class="tweet-actions">
+    <button class="tweet-action like">
+    <svg viewbox="0 0 24 24"><path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z" />
+    </svg><span>1.2K</span> </button>
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z" />
+    </svg><span>156</span> </button> 
+    <button class="tweet-action retweet">
+    <svg viewbox="0 0 24 24"><path d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z" />
+    </svg><span>89</span> </button>  
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z" /><path d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z" />
+    </svg></button>
+</div>
+</div>
+<div class="post">
+<div class="post-header">
+<div class="avatar small">
+    <img src="https://i.pinimg.com/736x/62/f0/10/62f010dc8252da0dc949fb30179b5089.jpg">
+</div>
+<div>
+    <strong>Jexter Corpuz</strong>
+    <span>1 hour ago</span>
+</div>
+</div>
+    <p class="post-text">Sanaol baliw</p>
+
+<div class="tweet-actions">
+    <button class="tweet-action like">
+    <svg viewbox="0 0 24 24"><path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z" />
+    </svg><span>1.2K</span> </button> 
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z" />
+    </svg><span>156</span> </button> 
+    <button class="tweet-action retweet">
+    <svg viewbox="0 0 24 24"><path d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z" />
+    </svg><span>89</span> </button> 
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z" /><path d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z" />
+    </svg></button>
+</div>
+</div>
+<div class="post">
+<div class="post-header">
+<div class="avatar small">
+    <img src="https://i.pinimg.com/736x/65/0a/53/650a53f5fa90a5ac07f3b1dc9fe8b45d.jpg">
+</div>
+<div>
+    <strong>Apollo Constantino</strong>
+    <span>7 hours ago</span>
+</div>
+</div>
+<div class="post-images">
+    <img src="https://i.pinimg.com/736x/14/6e/c5/146ec5f1b5e9511dda8653033d35ebfe.jpg">
+    <img src="https://i.pinimg.com/1200x/d0/44/5a/d0445a9b1df7d34b1dfc6190d59efb44.jpg">
+    <img src="https://i.pinimg.com/1200x/22/b7/df/22b7df0e50962be7caf50b10faa26a2e.jpg">
+    <img src="https://i.pinimg.com/736x/0a/12/4f/0a124f0fd48ee305d4bb380d9d759c21.jpg">
+</div>
+
+<div class="tweet-actions">
+    <button class="tweet-action like">
+    <svg viewbox="0 0 24 24"><path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z" />
+    </svg><span>1.2K</span> </button>
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z" />
+    </svg><span>156</span> </button> 
+    <button class="tweet-action retweet">
+    <svg viewbox="0 0 24 24"><path d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z" />
+    </svg><span>89</span> </button>  
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z" /><path d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z" />
+    </svg></button>
+</div>
+</div>
+<div class="post">
+<div class="post-header">
+<div class="avatar small">
+    <img src="https://i.pinimg.com/736x/b4/b9/e6/b4b9e64406bc8c70a716a4ea9c2343b0.jpg">
+</div>
+<div>
+    <strong>Maria Antonette Beldia</strong>
+    <span>1 hour ago</span>
+</div>
+</div>
+<p class="post-text">Today i choose peace, pero tignan natin mamaya maaga pa naman</p>
+
+<div class="tweet-actions">
+    <button class="tweet-action like">
+    <svg viewbox="0 0 24 24"><path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z" />
+    </svg><span>1.2K</span> </button> 
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z" />
+    </svg><span>156</span> </button> 
+    <button class="tweet-action retweet">
+    <svg viewbox="0 0 24 24"><path d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z" />
+    </svg><span>89</span> </button> 
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z" /><path d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z" />
+    </svg></button>
+</div>
+</div>
+<div class="post">
+<div class="post-header">
+<div class="avatar small">
+    <img src="https://i.pinimg.com/1200x/3d/89/3f/3d893fba683b35d4558700035366728b.jpg">
+</div>
+<div>
+        <strong>Daniella Encarnacion</strong>
+        <span>1 hour ago</span>
+</div>
+</div>
+    <p class="post-text">Malayo pa pero malapit kana tamaan sakin</p>
+
+<div class="tweet-actions">
+    <button class="tweet-action like">
+    <svg viewbox="0 0 24 24"><path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z" />
+    </svg><span>1.2K</span> </button> 
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z" />
+    </svg><span>156</span> </button> 
+    <button class="tweet-action retweet">
+    <svg viewbox="0 0 24 24"><path d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z" />
+    </svg><span>89</span> </button> 
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z" /><path d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z" />
+    </svg></button>
+</div>
+</div>
+<div class="post">
+<div class="post-header">
+    <div class="avatar small">
+    <img src="https://i.pinimg.com/736x/e5/0f/9d/e50f9d6845fbd4da2485f062b684e256.jpg">
+    </div>
+    <div>
+    <strong>Asia Delfino</strong>
+    <span>1 hour ago</span>
+</div>
+</div>
+    <p class="post-text">POV: Nagde-defuse ka mag-isa ng spike pero nakarinig ka ng gun drop sa gilid mo.</p>
+    <div class="post-images">
+    <img src="https://i.pinimg.com/736x/0c/a2/66/0ca266efadb7d37c3e48b40a1d08eed4.jpg">
+    </div>
+    <div class="tweet-actions">
+    <button class="tweet-action like">
+    <svg viewbox="0 0 24 24"><path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z" />
+    </svg><span>1.2K</span> </button>
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z" />
+    </svg><span>156</span> </button> 
+    <button class="tweet-action retweet">
+    <svg viewbox="0 0 24 24"><path d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z" />
+    </svg><span>89</span> </button>  
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z" /><path d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z" />
+    </svg></button>
+    </div>
+</div>
+
+</div>
+    <div class="post">
+    <div class="post-header">
+    <div class="avatar small">
+    <img src="https://i.pinimg.com/1200x/70/74/bd/7074bdb861d1679a6c037b2c943f7524.jpg">
+    </div>
+    <div>
+    <strong>Roushan Cantero</strong>
+    <span>1 hour ago</span>
+    </div>
+</div>
+<p class="post-text">LOrd paramdam mo lord na mahal mo ako PAtawad PO</p>
+    <div class="post-images">
+    <img src="https://i.pinimg.com/736x/d0/f9/d6/d0f9d6fa748ac75f67071a0b1a7a84b1.jpg">
+    </div>
+
+<div class="tweet-actions">
+    <button class="tweet-action like">
+    <svg viewbox="0 0 24 24"><path d="M12 21.638h-.014C9.403 21.59 1.95 14.856 1.95 8.478c0-3.064 2.525-5.754 5.403-5.754 2.29 0 3.83 1.58 4.646 2.73.814-1.148 2.354-2.73 4.645-2.73 2.88 0 5.404 2.69 5.404 5.755 0 6.376-7.454 13.11-10.037 13.157H12zM7.354 4.225c-2.08 0-3.903 1.988-3.903 4.255 0 5.74 7.034 11.596 8.55 11.658 1.518-.062 8.55-5.917 8.55-11.658 0-2.267-1.823-4.255-3.903-4.255-2.528 0-3.94 2.936-3.952 2.965-.23.562-1.156.562-1.387 0-.014-.03-1.425-2.965-3.954-2.965z" />
+    </svg><span>1.2K</span> </button>
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M14.046 2.242l-4.148-.01h-.002c-4.374 0-7.8 3.427-7.8 7.802 0 4.098 3.186 7.206 7.465 7.37v3.828c0 .108.044.286.12.403.142.225.384.347.632.347.138 0 .277-.038.402-.118.264-.168 6.473-4.14 8.088-5.506 1.902-1.61 3.04-3.97 3.043-6.312v-.017c-.006-4.367-3.43-7.787-7.8-7.788zm3.787 12.972c-1.134.96-4.862 3.405-6.772 4.643V16.67c0-.414-.335-.75-.75-.75h-.396c-3.66 0-6.318-2.476-6.318-5.886 0-3.534 2.768-6.302 6.3-6.302l4.147.01h.002c3.532 0 6.3 2.766 6.302 6.296-.003 1.91-.942 3.844-2.514 5.176z" />
+    </svg><span>156</span> </button> 
+    <button class="tweet-action retweet">
+    <svg viewbox="0 0 24 24"><path d="M23.77 15.67c-.292-.293-.767-.293-1.06 0l-2.22 2.22V7.65c0-2.068-1.683-3.75-3.75-3.75h-5.85c-.414 0-.75.336-.75.75s.336.75.75.75h5.85c1.24 0 2.25 1.01 2.25 2.25v10.24l-2.22-2.22c-.293-.293-.768-.293-1.06 0s-.294.768 0 1.06l3.5 3.5c.145.147.337.22.53.22s.383-.072.53-.22l3.5-3.5c.294-.292.294-.767 0-1.06zm-10.66 3.28H7.26c-1.24 0-2.25-1.01-2.25-2.25V6.46l2.22 2.22c.148.147.34.22.532.22s.384-.073.53-.22c.293-.293.293-.768 0-1.06l-3.5-3.5c-.293-.294-.768-.294-1.06 0l-3.5 3.5c-.294.292-.294.767 0 1.06s.767.293 1.06 0l2.22-2.22V16.7c0 2.068 1.683 3.75 3.75 3.75h5.85c.414 0 .75-.336.75-.75s-.337-.75-.75-.75z" />
+    </svg><span>89</span> </button>  
+    <button class="tweet-action">
+    <svg viewbox="0 0 24 24"><path d="M17.53 7.47l-5-5c-.293-.293-.768-.293-1.06 0l-5 5c-.294.293-.294.768 0 1.06s.767.294 1.06 0l3.72-3.72V15c0 .414.336.75.75.75s.75-.336.75-.75V4.81l3.72 3.72c.146.147.338.22.53.22s.384-.072.53-.22c.293-.293.293-.767 0-1.06z" /><path d="M19.708 21.944H4.292C3.028 21.944 2 20.916 2 19.652V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 .437.355.792.792.792h15.416c.437 0 .792-.355.792-.792V14c0-.414.336-.75.75-.75s.75.336.75.75v5.652c0 1.264-1.028 2.292-2.292 2.292z" />
+    </svg></button>
+</div>
+</div>
+
+</main>
+
+<aside class="right">
+<div class="birthday-notification">
+<h3>Birthdays Today</h3>
+
+<div class="birthday-item">
+    <img src="https://i.pinimg.com/736x/e5/45/b7/e545b7de581d8e2707ad86e97433aa11.jpg" alt="Friend">
+    <div class="birthday-info">
+    <strong>Carl Apolinario</strong> has a birthday today 🎉
+    </div>
+</div>
+
+<div class="birthday-item">
+    <img src="https://i.pinimg.com/736x/a2/ce/1a/a2ce1a1d032ae71536faf5e411be82b3.jpg" alt="Friend">
+    <div class="birthday-info">
+    <strong>Arcenio Layao</strong>’s birthday is in 3 days! 🎂
+    </div>
+    </div>
+    <a href="birthdays.html" class="see-more">See More</a>
+</div>
+
+<div class="friends-list">
+    <h3>Friend Requests</h3>
+<div class="friend-item">
+    <img src="https://i.pinimg.com/736x/15/25/76/152576a241f5582fc7a175ad395c1107.jpg">
+    <div class="friend-info">
+    <strong>Luciana Margaux</strong>
+    <div class="friend-actions">
+    <button class="accept">Confirm</button>
+    <button class="remove">Delete</button>
+    </div>
+    </div>
+</div>
+
+<div class="friend-item">
+    <img src="https://i.pinimg.com/736x/f1/33/8a/f1338a81d215322b23bc5c8a5dc80d3a.jpg">
+    <div class="friend-info">
+    <strong>Villamor Reyes</strong>
+    <div class="friend-actions">
+    <button class="accept">Confirm</button>
+    <button class="remove">Delete</button>
+    </div>
+    </div>
+    </div>
+</div>
+
+<div class="friends-list">
+    <h3>Who to Follow</h3>
+
+<div class="friend-item">
+    <img src="https://i.pinimg.com/736x/55/6d/e5/556de546454c761d0c79f0fdf365341b.jpg">
+    <div class="friend-info">
+    <strong>Navarro Castillo</strong>
+    <button class="follow">Follow</button>
+    </div>
+</div>
+
+<div class="friend-item">
+    <img src="https://i.pinimg.com/736x/b5/af/ea/b5afeaa372df7f3b863891f2e6bfabd2.jpg">
+    <div class="friend-info">
+    <strong>Flores Mendoza</strong>
+    <button class="follow">Follow</button>
+    </div>
+    </div>
+<div class="friend-item">
+    <img src="https://i.pinimg.com/736x/9d/19/a5/9d19a53979ed516b8240436a31b0f6c5.jpg">
+    <div class="friend-info">
+    <strong>Nicolas Joaquin</strong>
+    <button class="follow">Follow</button>
+    </div>
+</div>
+<div class="friend-item">
+<img src="https://i.pinimg.com/736x/2f/e3/bf/2fe3bf557814000cfbb3a06075a37dbe.jpg">
+    <div class="friend-info">
+    <strong>Madrigal-Lorenzo</strong>
+    <button class="follow">Follow</button>
+    </div>
+</div>
+</div>
+
+<div id="chatheads-container"></div>
+<div id="chat-windows-container"></div>
+
+    </aside>
+<div class="bottom-nav">
+    <a href="../Homepage.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>Home</a>
+    <a href="../friends.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>Friends</a>
+    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>Post</a>
+    <a href="chat-nina.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Messages</a>
+    <a href="../profile/profile.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Profile</a>
+</div>
+<script src="homepage.js" defer></script>
+</body>
+</html>
