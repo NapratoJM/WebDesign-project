@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages · Witty</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../images/loho-test.png">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Nunito', Arial, sans-serif; }
+        html, body { height: 100%; background: #efe2c6; }
+
+        .topbar {
+            position: fixed; top: 0; left: 0; width: 100%;
+            background: #a6936a;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            height: 60px;
+            padding: 0 16px;
+        }
+        .topbar-left { display: flex; align-items: center; gap: 10px; }
+        .top-avatar { width: 32px; height: 32px; border-radius: 50%; object-fit: cover; cursor: pointer; }
+        .topbar-title {
+            position: absolute; left: 50%; transform: translateX(-50%);
+            display: flex; align-items: center; gap: 8px;
+            pointer-events: none;
+        }
+        .title-logo { height: 65px; width: auto; object-fit: contain; }
+        .topbar-title span { font-weight: 700; font-size: 20px; color: #2f2b20; letter-spacing: 1px; }
+        .icon-btn { background: none; border: none; cursor: pointer; padding: 8px; border-radius: 8px; }
+        .icon-btn:hover { background: rgba(255,255,255,0.2); }
+
+        .page-content {
+            padding: 72px 0 80px;
+            min-height: 100vh;
+        }
+
+        .page-header {
+            padding: 16px 16px 10px;
+            display: flex; align-items: center; justify-content: space-between;
+        }
+        .page-header h2 { font-size: 22px; font-weight: 800; color: #2f2b20; }
+        .edit-btn {
+            width: 34px; height: 34px; border-radius: 50%;
+            background: #d9c18e; border: none; cursor: pointer;
+            display: flex; align-items: center; justify-content: center;
+        }
+
+        .search-wrap {
+            margin: 0 16px 12px;
+            background: #d9c18e;
+            border-radius: 30px;
+            padding: 9px 14px;
+            display: flex; align-items: center; gap: 8px;
+        }
+        .search-wrap input {
+            background: none; border: none; outline: none;
+            font-size: 14px; color: #2f2b20; font-family: inherit; width: 100%;
+        }
+        .search-wrap input::placeholder { color: #888; }
+
+        .tabs {
+            display: flex; gap: 8px;
+            padding: 0 16px 12px;
+        }
+        .tab-btn {
+            padding: 6px 18px; border-radius: 25px; border: none;
+            font-size: 13px; font-weight: 700; cursor: pointer;
+            background: #c9d3a3; color: #444;
+            font-family: inherit;
+        }
+        .tab-btn.active { background: #8fa14a; color: #fff; }
+
+        .contact-list { padding: 4px 10px; }
+
+        .contact-item {
+            display: flex; align-items: center; gap: 12px;
+            padding: 10px 10px; border-radius: 14px;
+            text-decoration: none; color: #1c1e21;
+            margin-bottom: 2px;
+            transition: background 0.15s;
+        }
+        .contact-item:hover { background: #d9c18e; }
+        .contact-item.active { background: #8fa14a; color: #fff; }
+
+        .avatar-wrap { position: relative; flex-shrink: 0; }
+        .avatar-wrap img { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; display: block; }
+        .online-dot {
+            width: 13px; height: 13px; background: #8fa14a;
+            border-radius: 50%; border: 2px solid #efe2c6;
+            position: absolute; bottom: 1px; right: 1px;
+        }
+        .contact-item.active .online-dot { background: #fff; border-color: #8fa14a; }
+
+        .contact-info { flex: 1; min-width: 0; }
+        .contact-info strong { font-size: 16px; font-weight: 700; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .preview { font-size: 14px; color: #777; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; margin-top: 2px; }
+        .preview.unread { font-weight: 700; color: #444; }
+        .contact-item.active .preview { color: rgba(255,255,255,0.85); }
+
+        .contact-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 5px; flex-shrink: 0; }
+        .contact-meta span { font-size: 13px; color: #999; }
+        .contact-item.active .contact-meta span { color: rgba(255,255,255,0.8); }
+        .unread-badge {
+            background: #5a7a2e; color: #fff;
+            font-size: 12px; font-weight: 700;
+            padding: 2px 7px; border-radius: 20px;
+            min-width: 20px; text-align: center;
+        }
+        .contact-item.active .unread-badge { background: #fff; color: #8fa14a; }
+
+        .bottom-nav {
+            display: flex; justify-content: space-around; align-items: center;
+            position: fixed; bottom: 0; left: 0; right: 0;
+            background: #efe2c6; border-top: 1px solid rgba(0,0,0,0.1);
+            padding: 8px 0; z-index: 1000;
+        }
+        .bottom-nav a {
+            display: flex; flex-direction: column; align-items: center;
+            font-size: 10px; color: #555; text-decoration: none; gap: 2px;
+        }
+        .bottom-nav a.active { color: #8fa14a; }
+        .bottom-nav svg { stroke: currentColor; }
+    </style>
+</head>
+<body>
+
+<header class="topbar">
+    <div class="topbar-left">
+        <img src="../images/profile.jpg" class="top-avatar">
+    </div>
+    <div class="topbar-title">
+        <img src="../images/loho-test.png" class="title-logo">
+    </div>
+    <button class="icon-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2f2b20" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+</header>
+
+<div class="page-content">
+    <div class="page-header">
+        <h2>Messages</h2>
+        <button class="edit-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </button>
+    </div>
+
+    <div class="search-wrap">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" placeholder="Search messages...">
+    </div>
+
+    <div class="tabs">
+        <button class="tab-btn active">Inbox</button>
+        <button class="tab-btn">Requests</button>
+    </div>
+
+    <div class="contact-list">
+        <a href="chat-nina.html" class="contact-item">
+            <div class="avatar-wrap"><img src="https://i.pinimg.com/1200x/37/8e/60/378e60434a740b05817a18e428b73c8a.jpg"><div class="online-dot"></div></div>
+            <div class="contact-info"><strong>Nina Becina</strong><span class="preview" data-full="You: deal!!">You: deal!!</span></div>
+            <div class="contact-meta"><span>now</span></div>
+        </a>
+        <a href="chat-jhorelle.html" class="contact-item">
+            <div class="avatar-wrap"><img src="https://i.pinimg.com/736x/a4/58/e9/a458e9a93a3a6a4e1f8101805eb2ccb5.jpg"></div>
+            <div class="contact-info"><strong>Jhorelle Naprato</strong><span class="preview unread" data-full="You: next time promise">You: next time promise</span></div>
+            <div class="contact-meta"><span>2m</span><span class="unread-badge">2</span></div>
+        </a>
+        <a href="chat-arci.html" class="contact-item">
+            <div class="avatar-wrap"><img src="https://i.pinimg.com/736x/a2/ce/1a/a2ce1a1d032ae71536faf5e411be82b3.jpg"><div class="online-dot"></div></div>
+            <div class="contact-info"><strong>Arcenio Layao</strong><span class="preview" data-full="You: Sanaol talaga eh">You: Sanaol talaga eh</span></div>
+            <div class="contact-meta"><span>30m</span></div>
+        </a>
+        <a href="chat-carl.html" class="contact-item">
+            <div class="avatar-wrap"><img src="https://i.pinimg.com/736x/e5/45/b7/e545b7de581d8e2707ad86e97433aa11.jpg"><div class="online-dot"></div></div>
+            <div class="contact-info"><strong>Carl Apolinario</strong><span class="preview unread" data-full="You: ok sige sandali lang">You: ok sige sandali lang</span></div>
+            <div class="contact-meta"><span>2hrs</span><span class="unread-badge">2</span></div>
+        </a>
+        <a href="chat-jex.html" class="contact-item">
+            <div class="avatar-wrap"><img src="https://i.pinimg.com/736x/62/f0/10/62f010dc8252da0dc949fb30179b5089.jpg"></div>
+            <div class="contact-info"><strong>Jexter Corpuz</strong><span class="preview" data-full="You: sige hintay ko bayad niyo">You: sige hintay ko bayad niyo</span></div>
+            <div class="contact-meta"><span>3hrs</span></div>
+        </a>
+        <a href="chat-dani.html" class="contact-item">
+            <div class="avatar-wrap"><img src="https://i.pinimg.com/1200x/3d/89/3f/3d893fba683b35d4558700035366728b.jpg"></div>
+            <div class="contact-info"><strong>Daniella Encarnacion</strong><span class="preview" data-full="Daniella: sige ok">Daniella: sige ok</span></div>
+            <div class="contact-meta"><span>4hrs</span></div>
+        </a>
+        <a href="chat-ysa.html" class="contact-item">
+            <div class="avatar-wrap"><img src="https://i.pinimg.com/1200x/12/66/fe/1266fe1c738d770602693a234baa6db7.jpg"></div>
+            <div class="contact-info"><strong>Ysabella Santos</strong><span class="preview" data-full="You: okii te">You: okii te</span></div>
+            <div class="contact-meta"><span>5hrs</span></div>
+        </a>
+        <a href="chat-arish.html" class="contact-item">
+            <div class="avatar-wrap"><img src="https://i.pinimg.com/1200x/b0/64/63/b064631fafd3c9b45853b5ca2a8ea5bb.jpg"><div class="online-dot"></div></div>
+            <div class="contact-info"><strong>Arish Salisod</strong><span class="preview" data-full="You: Legit napatawa ako sa sala">You: Legit napatawa ako sa sala</span></div>
+            <div class="contact-meta"><span>6hrs</span></div>
+        </a>
+        <a href="chat-richard.html" class="contact-item">
+            <div class="avatar-wrap"><img src="https://i.pinimg.com/1200x/40/b9/1c/40b91c964653d5a057abfeef5efc2a95.jpg"><div class="online-dot"></div></div>
+            <div class="contact-info"><strong>Richard Villaroza</strong><span class="preview unread" data-full="Richard: ok">Richard: ok</span></div>
+            <div class="contact-meta"><span>8hrs</span><span class="unread-badge">2</span></div>
+        </a>
+        <a href="chat-asia.html" class="contact-item">
+            <div class="avatar-wrap"><img src="https://i.pinimg.com/736x/e5/0f/9d/e50f9d6845fbd4da2485f062b684e256.jpg"><div class="online-dot"></div></div>
+            <div class="contact-info"><strong>Asia Delfino</strong><span class="preview" data-full="Asia: hahaha oo nga">Asia: hahaha oo nga</span></div>
+            <div class="contact-meta"><span>9hrs</span></div>
+        </a>
+        <a href="chat-roushan.html" class="contact-item">
+            <div class="avatar-wrap"><img src="https://i.pinimg.com/1200x/70/74/bd/7074bdb861d1679a6c037b2c943f7524.jpg"></div>
+            <div class="contact-info"><strong>ROSHANN!!</strong><span class="preview unread" data-full="ROSHANN!!: salamat!">ROSHANN!!: salamat!</span></div>
+            <div class="contact-meta"><span>10hrs</span><span class="unread-badge">2</span></div>
+        </a>
+        <a href="chat-jha.html" class="contact-item">
+            <div class="avatar-wrap"><img src="https://i.pinimg.com/1200x/68/4d/24/684d244c961128b4a20c0aa62dde5d2c.jpg"></div>
+            <div class="contact-info"><strong>Jhariza Mendoza</strong><span class="preview" data-full="You: sige enjoy!">You: sige enjoy!</span></div>
+            <div class="contact-meta"><span>12hrs</span></div>
+        </a>
+        <a href="chat-mama.html" class="contact-item">
+            <div class="avatar-wrap"><img src="https://i.pinimg.com/736x/7a/1c/4d/7a1c4d503b95b64cbe54c8280e2eab02.jpg"></div>
+            <div class="contact-info"><strong>MY MOTHERRR 🥰</strong><span class="preview" data-full="You: ingat ka lagi ma">You: ingat ka lagi ma</span></div>
+            <div class="contact-meta"><span>15hrs</span></div>
+        </a>
+    </div>
+</div>
+
+<div class="bottom-nav">
+    <a href="../Homepage.html">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home
+    </a>
+    <a href="../friends.html">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Friends
+    </a>
+    <a href="#">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        Post
+    </a>
+    <a href="lists-page.html" class="active">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Messages
+    </a>
+    <a href="../profile/profile.html">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Profile
+    </a>
+</div>
+
+<script>
+    function truncatePreviews() {
+        var limit = 25;
+        document.querySelectorAll('.preview').forEach(function(el) {
+            var full = el.getAttribute('data-full');
+            if (!full) return;
+            el.textContent = full.length > limit ? full.substring(0, limit) + '...' : full;
+        });
+    }
+    truncatePreviews();
+    window.addEventListener('resize', truncatePreviews);
+</script>
+</body>
+</html>
